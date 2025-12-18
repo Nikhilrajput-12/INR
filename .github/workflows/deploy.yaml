@@ -38,9 +38,9 @@ jobs:
         run: |
           rsync -avz --delete \
           -e "ssh -o StrictHostKeyChecking=no -i ssh-key.pem" \
-          build/ ubuntu@<EC2_PUBLIC_IP>:/var/www/html/
+          build/ ubuntu@13.232.38.92:/var/www/html/
 
       - name: Restart Nginx
         run: |
-          ssh -o StrictHostKeyChecking=no -i ssh-key.pem ubuntu@<EC2_PUBLIC_IP> \
+          ssh -o StrictHostKeyChecking=no -i ssh-key.pem ubuntu@13.232.38.92 \
           "sudo nginx -t && sudo systemctl restart nginx"
