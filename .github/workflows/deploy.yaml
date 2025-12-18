@@ -43,4 +43,4 @@ jobs:
       - name: Restart Nginx
         run: |
           ssh -o StrictHostKeyChecking=no -i ssh-key.pem ubuntu@13.232.38.92 \
-          "sudo nginx -t && sudo systemctl restart nginx "
+          "sudo nginx -t && sudo systemctl restart nginx"
